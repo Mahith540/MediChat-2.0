@@ -27,3 +27,6 @@ frontend/build
 .DS_Store
 *.swp
 *.swo
+
+# The vector index is built inside the image from data/, never copied in
+embeddings/
