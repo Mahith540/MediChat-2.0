@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { API_URL } from "../config";
 
 const nativeFetch = window.fetch.bind(window);
 
@@ -32,7 +33,7 @@ export default function StudentDashboard({ analysis }) {
 
   useEffect(() => {
     const fetch = () =>
-      nativeFetch("http://127.0.0.1:8000/dashboard")
+      nativeFetch(`${API_URL}/dashboard`)
         .then(r => r.json())
         .then(setData)
         .catch(() => {});

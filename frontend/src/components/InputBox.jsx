@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { API_URL } from "../config";
 
 // ✅ Capture native fetch BEFORE any Chrome extension can override window.fetch
 const nativeFetch = window.fetch.bind(window);
@@ -132,7 +133,7 @@ function InputBox({
     setVoiceState("thinking");
 
     try {
-      const res = await nativeFetch("http://127.0.0.1:8000/chat", {
+      const res = await nativeFetch(`${API_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

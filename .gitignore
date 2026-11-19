@@ -6,7 +6,6 @@ __pycache__/
 .env
 node_modules/
 frontend/node_modules/
-data/
 embeddings/
 *.pyc
 .vscode/
